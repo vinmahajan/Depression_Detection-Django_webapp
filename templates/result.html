@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Detection</title>
+     <!-- Favicons -->
+  <link href="{% static 'images/VM_logo.png' %}" rel="icon">
+  <link href="{% static 'images/VM_logo.png'  %}" rel="apple-touch-icon">
+
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+    <link href="{% static 'css/loader.css' %}" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href='result.css'>
+    <link href='loader.css' rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> -->
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/aos.css' %}" rel="stylesheet">
+    <!-- <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
+    <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<style>
+    * body {
+        background-image: url("{% static 'images/depressed_boy2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    body {
+        font-family: sans-serif;
+        color: white;
+        /* background: rgb(0, 175, 241);
+        background: linear-gradient(45deg, rgba(0, 175, 241, 1) 0%, rgba(255, 0, 219, 1) 100%); */
+    }
+    .header {
+    position: fixed;
+    padding: 30px 0;
+    
+}
+    
+
+    .center {
+        /* width: 50vw; */
+        /* height: 50vw; */
+
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 50px;
+        /* bottom: 100px; */
+        left: 0;
+        right: 0;
+
+        margin: auto;
+
+
+    }
+
+    h2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .divspace {
+        padding: 6%;
+    }
+
+
+    .containe {
+        display: flex;
+        position: absolute;
+        height: 80px;
+
+        /* Adjust the height as needed */
+        align-items: flex-end;
+        /* justify-content: center; */
+    }
+
+    .conten {
+        position: relative;
+        bottom: 0;
+        text-align: center;
+        font-size: large;
+        color: rgb(255, 255, 255);
+        animation: fadeIn 5s;
+
+    }
+
+.video-container{
+    position: absolute;
+    top: 63%;
+}
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1>VINM<span></span></h1>
+            </a>
+
+            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+
+    <!-- 
+    <div id="loading" class="container move">
+        <svg class="file fadein" x="0px" y="0px" width="36px" height="43px" viewBox="0 0 36 43">
+            <path class="file-body" d="M36,43H0V0h24.7L36,11.3V43z" />
+            <path class="file-bend" d="M24.7,0L36,11.3H24.7V0z" />
+        </svg>
+        <svg class="file zoomin" x="0px" y="0px" width="36px" height="43px" viewBox="0 0 36 43">
+            <path class="file-body" d="M36,43H0V0h24.7L36,11.3V43z" />
+            <path class="file-bend" d="M24.7,0L36,11.3H24.7V0z" />
+        </svg>
+        <svg class="file zoomout" x="0px" y="0px" width="36px" height="43px" viewBox="0 0 36 43">
+            <path class="file-body" d="M36,43H0V0h24.7L36,11.3V43z" />
+            <path class="file-bend" d="M24.7,0L36,11.3H24.7V0z" />
+            <path class="file-check done" d="M26.8,20.6L14.9,32.5l-5.7-5.7l2.1-2.1l3.6,3.6l9.8-9.9L26.8,20.6z" />
+            <circle class="file-loading load" cx="13" cy="21" r="7.7"></circle>
+        </svg>
+        <svg class="file fadeout" x="0px" y="0px" width="36px" height="43px" viewBox="0 0 36 43">
+            <path class="file-body" d="M36,43H0V0h24.7L36,11.3V43z" />
+            <path class="file-bend" d="M24.7,0L36,11.3H24.7V0z" />
+            <path class="file-check" d="M26.8,20.6L14.9,32.5l-5.7-5.7l2.1-2.1l3.6,3.6l9.8-9.9L26.8,20.6z" />
+        </svg>
+    </div> -->
+
+    <div class="center">
+
+        <!-- <div class="pie animate no-round" style="--p:70;--c:red"> 70%</div> -->
+        <div class="divspace">
+            <div class="pie animate" style="--p:{{negative_per}};--c:red"> {{negative_per}}%</div>
+            <h2 style="color: red;">Negative</h1>
+        </div>
+
+        <div class="divspace">
+            <div class="pie animate" style="--p:{{positive_per}};--c:green"> {{positive_per}}%</div>
+            <h2 style="color: green;">Positive</h2>
+        </div>
+    </div>
+
+    <div class="containe">
+        <div class="conten">{{resultsuggestion}}</div>
+    </div>
+    <div class="video-container">
+        <!-- <video class="video" width="400" controls poster="{% static 'images/shifuji.png' %}" controlsList="nodownload">
+            <source src="{% static 'videos/mov_bbb.mp4' %}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video> -->
+
+        <!-- <iframe src="https://www.youtube.com/embed/Dkq47BmvJ1k" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe> -->
+            <iframe width="399" height="224" src="https://www.youtube.com/embed/Dkq47BmvJ1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    <!-- <script>
+        var overlayloader = document.getElementById("loading");
+        window.addEventListener("load", function () {
+            overlayloader.style.display = "none";
+        })
+    </script> -->
+</body>
+
+</html>

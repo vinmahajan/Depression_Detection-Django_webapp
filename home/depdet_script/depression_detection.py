@@ -8,12 +8,24 @@ nltk.download('wordnet')
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
+from ntscraper import Nitter
 #import static
+
+#initialize the library
+scraper=Nitter(log_level=1, skip_instance_check=False)
 
 
 def down_tweets(username=str):
-    user_data = pd.read_csv('static/user_tweets.csv')
-    return user_data
+    # user_data = pd.read_csv('static/user_tweets.csv')
+    print('scraping tweets...')
+    tweets = scraper.get_tweets("iamsrk", mode='user', number=100)
+    user_dataset=[]
+    for tweet in tweets['tweets']:
+        user_dataset.append(tweet['text'])
+
+    user_df=pd.DataFrame(user_dataset, columns=['tweet'])
+    return user_df
+
 
 def text_cliner(tweet):
     tweet = re.sub('@[^\s]+','',tweet)

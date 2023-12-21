@@ -18,7 +18,7 @@ scraper=Nitter(log_level=1, skip_instance_check=False)
 def down_tweets(username=str):
     # user_data = pd.read_csv('static/user_tweets.csv')
     print('scraping tweets...')
-    tweets = scraper.get_tweets("iamsrk", mode='user', number=100)
+    tweets = scraper.get_tweets(username.strip('@'), mode='user', number=100)
     user_dataset=[]
     for tweet in tweets['tweets']:
         user_dataset.append(tweet['text'])
